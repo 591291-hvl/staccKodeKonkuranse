@@ -23,7 +23,8 @@ base64
 
 Run main.py and open http://127.0.0.1:5000/ to run on local
 
-To just view, the site is being run on:
+To just view, the site is being run on: https://stacckodekonkuranse.591291-hvl.repl.co/
+
 
 If no file is selected, a default from: https://github.com/stacc/future-of-fintech-V2023/blob/main/data/consumption.json 
 is given, otherwise please upload a .json file.
