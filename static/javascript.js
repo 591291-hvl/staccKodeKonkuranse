@@ -45,7 +45,7 @@ btn.onclick = () => {
             fetch("http://127.0.0.1:5000/fastPris", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ "value": input.value }),
+                body: JSON.stringify({ "value": input.value, "radio": document.querySelector('input[name="spotArea"]:checked').value }),
             }).then(async response => {
                 if (response.ok) {
                     response.text().then(async result => {

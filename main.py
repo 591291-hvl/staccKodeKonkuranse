@@ -8,7 +8,7 @@ import pandas as pd
 with open("data/consumption.json", "r") as json_file:
     my_dict = json.load(json_file)
 
-
+#Get and set for global variables
 def getDict():
     return my_dict
 
@@ -41,26 +41,14 @@ def average(jsonList):
 
 
 def fastPris(pris, jsonList):
-    pris = float(pris.replace(",", "."))
+    pris = float(pris.replace(",", ".")) #comma and period number parser
     return sum([d['consumption']*pris for d in jsonList])
 
 
-def spotPris(dataframe, dictonary):
+def spotPris(dataframe, dictonary, radio): #calculates "spotpris" for given usage
     dataframe = dataframe.assign(
         consumption=[d['consumption'] for d in dictonary])
-    return (dataframe['NO1'] * dataframe['consumption']).sum()
-
-
-def plot(n):
-    plt.figure(figsize=(8, 6))
-    plt.plot(range(len(my_dict)), [d['consumption'] for d in my_dict])
-    plt.xlabel("Hours")
-    plt.ylabel("kWh")
-
-    plt.plot(range(len(my_dict)), [int(n)] *
-             len(my_dict), 'r', label="Average")
-    plt.legend()
-    plt.savefig("plot.png")
+    return (dataframe[radio] * dataframe['consumption']).sum()
 
 
 def dualPlot(n, dictionary, dataframe, radio):
@@ -126,7 +114,7 @@ def get_fastPris():
     sumVal = round(fastPris(request.json['value'], getDict()), 2)
     averageVal = round(average(getDict()), 2)
     spotVal = round(spotPris(spotPrisKorting(
-        getSpotPrisDF(), getDict()), getDict()), 2)
+        getSpotPrisDF(), getDict()), getDict(), request.json['radio']), 2)
     return str(sumVal) + "_" + str(averageVal) + "_" + str(spotVal)
 
 
