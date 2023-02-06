@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stacc kodeoppgave</title>
+    </head>
+
+<script defer type=text/javascript src="{{
+        url_for('static', filename='javascript.js')
+      }}">
+    </script>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+
+<body>
+    <input type="file" id="file">
+    <input type="text" id="input" placeholder="Fast pris kr/kWt">
+    <button type="button" id="btn">Submit</button>
+    <input type="radio" name="spotArea" value="NO1" checked>
+    <label for="NO1">Øst</label>
+    <input type="radio" name="spotArea" value="NO2">
+    <label for="NO1">Sør</label>
+    <input type="radio" name="spotArea" value="NO3">
+    <label for="NO1">Midt</label>
+    <input type="radio" name="spotArea" value="NO4">
+    <label for="NO1">Nord</label>
+    <input type="radio" name="spotArea" value="NO5">
+    <label for="NO1">Vest</label>
+    <p id="fastPrisOutput"></p>
+    <p id="snittBrukOutput"></p>
+    <p id="spotPrisOutput"></p>
+    <br>
+    <image src="" id="imgOutput"></image>
+</body>
+
+</html>
