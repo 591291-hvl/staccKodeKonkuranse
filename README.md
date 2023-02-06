@@ -41,7 +41,7 @@ Code lacks comments, i hope variable/function names are enough to understand:)
 There is also 2 global variables due to some complications with what i was able to send/receive in one fetch, otherwise it would be a single fetch.
 
 
-##Demo
+## Demo
 
 
 
