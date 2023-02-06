@@ -39,3 +39,12 @@ main.ipynb was used for testing functions before moving to main.py.
 Code lacks comments, i hope variable/function names are enough to understand:)
 
 There is also 2 global variables due to some complications with what i was able to send/receive in one fetch, otherwise it would be a single fetch.
+
+
+##Demo
+
+
+
+https://user-images.githubusercontent.com/69840782/216972941-03248717-651a-4069-8b71-7d960c66cc76.mp4
+
+
